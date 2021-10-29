@@ -1,5 +1,10 @@
 ## AWS Devops For Tradium-Alerts app
 
+- Infrastructure (Terraform)
+- Infrastructure Configuration Management (Chef)
+- CI (Github Action)
+- CD (Github Action)
+
 ### Tips
 * To init Terraform: `./terraform init -backend-config=./backend.tfvars`
 * To turn on debug logging: `export TF_LOG=DEBUG`
