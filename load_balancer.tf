@@ -1,5 +1,5 @@
 resource "aws_security_group" "allow_tls_in_lb" {
-  name        = "allow_tls"
+  name        = "allow_tls_in_lb"
   description = "Allow TLS inbound traffic from public to load balancer"
   vpc_id      = module.vpc.vpc_id
 
@@ -32,7 +32,7 @@ resource "aws_security_group" "allow_tls_in_lb" {
   ]
 
   tags = {
-    Name = "allow_tls"
+    Name = "allow_tls_in_lb"
   }
 }
 
@@ -44,7 +44,7 @@ resource "aws_lb" "tradium_alerts_web_lb" {
   security_groups    = [aws_security_group.allow_tls_in_lb.id]
   subnets            = module.vpc.public_subnets
 
-  enable_deletion_protection = true
+  enable_deletion_protection = false
 
   tags = {
     Environment = "production"
