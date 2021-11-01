@@ -15,7 +15,7 @@ module "vpc" {
 
   enable_nat_gateway     = true
   one_nat_gateway_per_az = true
-  enable_vpn_gateway     = true
+  enable_vpn_gateway     = false
   reuse_nat_ips          = true             # <= Skip creation of EIPs for the NAT Gateways
   external_nat_ip_ids    = aws_eip.nat.*.id # <= IPs specified here as input to the module
 
